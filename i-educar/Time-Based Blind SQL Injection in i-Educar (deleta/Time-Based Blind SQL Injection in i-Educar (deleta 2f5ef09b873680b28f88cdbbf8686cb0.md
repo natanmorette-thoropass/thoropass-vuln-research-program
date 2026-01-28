@@ -4,15 +4,6 @@
 <img width="525" height="91" alt="image" src="https://github.com/user-attachments/assets/b3ef3c1c-554b-4055-b28c-4690bd23724d" />
 
 
-|---------------|-----------------------------------------------------------------------|
-| Author        | Natan Morette on behalf of [Thoropass](https://www.thoropass.com/)                                   |
-| Affected App  | [i-Educar](https://github.com/portabilis/i-educar)                                                               |
-| Version       | 2.10.0                                                                 |
-| Endpoint      | `/intranet/agenda.php`                                                 |
-| Parameter     | `deletar`                                                              |
-| Type          | Time-Based Blind SQL Injection (PostgreSQL)                            |
-
-
 | **Author**        | Natan Morette on behalf of [Thoropass](https://www.thoropass.com/)                                  |
 |------------------|-------------------------------------------------------------------------|
 | **Affected App** | [i-Educar](https://github.com/portabilis/i-educar)                      |
