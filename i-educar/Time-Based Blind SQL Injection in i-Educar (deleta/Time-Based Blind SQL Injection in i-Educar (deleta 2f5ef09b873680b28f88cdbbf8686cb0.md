@@ -5,8 +5,8 @@
 
 | Field          | Value                                                                 |
 |---------------|-----------------------------------------------------------------------|
-| Author        | Natan Morette on behalf of Thoropass                                   |
-| Affected App  | i-Educar                                                               |
+| Author        | Natan Morette on behalf of [Thoropass](https://www.thoropass.com/)                                   |
+| Affected App  | [i-Educar](https://github.com/portabilis/i-educar)                                                               |
 | Version       | 2.10.0                                                                 |
 | Endpoint      | `/intranet/agenda.php`                                                 |
 | Parameter     | `deletar`                                                              |
