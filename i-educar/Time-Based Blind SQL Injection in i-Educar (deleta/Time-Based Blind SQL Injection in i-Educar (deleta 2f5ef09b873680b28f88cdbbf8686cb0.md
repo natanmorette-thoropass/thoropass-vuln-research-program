@@ -1,8 +1,8 @@
 # Time-Based Blind SQL Injection in i-Educar (deletar parameter in agenda.php)
 
-**Author:** Natan Morette on behalf of Thoropass
-<img width="525" height="91" alt="image" src="https://github.com/user-attachments/assets/b3ef3c1c-554b-4055-b28c-4690bd23724d" />
 
+<img width="525" height="91" alt="image" src="https://github.com/user-attachments/assets/b3ef3c1c-554b-4055-b28c-4690bd23724d" />
+**Author:** Natan Morette on behalf of Thoropass
 **Affected App:** i-Educar
 
 Version: 2.10.0
