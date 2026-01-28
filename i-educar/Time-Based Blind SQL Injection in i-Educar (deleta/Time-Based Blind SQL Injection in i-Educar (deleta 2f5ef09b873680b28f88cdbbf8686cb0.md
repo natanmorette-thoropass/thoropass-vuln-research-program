@@ -11,7 +11,6 @@
 | Endpoint      | `/intranet/agenda.php`                                                 |
 | Parameter     | `deletar`                                                              |
 | Type          | Time-Based Blind SQL Injection (PostgreSQL)                            |
-| CWE           | CWE-89: Improper Neutralization of Special Elements used in an SQL Command (SQL Injection) |
 
 ## **Summary**
 
