@@ -38,7 +38,7 @@ Cookie: i_educar_session=oPSWZGZAoaklSkX60cVXos50m3HfqrO8VW8PC0KW
 
 **1. Time delay using pg_sleep(10):**
 
-![Normal request](Time-Based%20Blind%20SQL%20Injection%20in%20i-Educar%20(deleta/image.png)
+![Normal request](Time-Based%20Blind%20SQL%20Injection%20in%20i-Educar%20(image.png)
 
 Normal request
 
