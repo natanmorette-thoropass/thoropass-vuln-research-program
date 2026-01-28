@@ -1,5 +1,4 @@
-# Time-Based Blind SQL Injection in i-Educar (deletar parameter in 
-agenda.php)
+# Time-Based Blind SQL Injection in i-Educar (deletar parameter in agenda.php)
 
 Owner: Natan Morette
 
