@@ -18,7 +18,8 @@ The deletar parameter in the agenda.php page of the i-Educar system is vulnerabl
 
 This vulnerability allows **unauthenticated attackers** to exploit the application in a **stealthy and reliable way**, potentially leading to data exfiltration or full compromise of the backend logic.
 
- **Technical Details**
+
+## **Technical Details**
 
 **Vulnerable Request:**
 
