@@ -3,19 +3,15 @@
 
 <img width="525" height="91" alt="image" src="https://github.com/user-attachments/assets/b3ef3c1c-554b-4055-b28c-4690bd23724d" />
 
-**Author:** Natan Morette on behalf of Thoropass
-
-**Affected App:** i-Educar
-
-Version: 2.10.0
-
-**Endpoint:** `/intranet/agenda.php`
-
-Parameter: `deletar`
-
-**Type:** Time-Based Blind SQL Injection (PostgreSQL)
-
-**CWE:**[CWE-89: Improper Neutralization of Special Elements used in an SQL Command (‘SQL Injection’)](https://cwe.mitre.org/data/definitions/89.html)
+| Field          | Value                                                                 |
+|---------------|-----------------------------------------------------------------------|
+| Author        | Natan Morette on behalf of Thoropass                                   |
+| Affected App  | i-Educar                                                               |
+| Version       | 2.10.0                                                                 |
+| Endpoint      | `/intranet/agenda.php`                                                 |
+| Parameter     | `deletar`                                                              |
+| Type          | Time-Based Blind SQL Injection (PostgreSQL)                            |
+| CWE           | CWE-89: Improper Neutralization of Special Elements used in an SQL Command (SQL Injection) |
 
 ## **Summary**
 
