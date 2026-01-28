@@ -34,7 +34,8 @@ Cookie: i_educar_session=oPSWZGZAoaklSkX60cVXos50m3HfqrO8VW8PC0KW
 - When executed, this causes the SQL server to **intentionally delay** the response.
 - By measuring the time difference between requests, it is possible to infer **boolean conditions** and exfiltrate sensitive data **bit by bit**.
 
- **PoC (Proof of Concept)**
+
+**PoC (Proof of Concept)**
 
 **1. Time delay using pg_sleep(10):**
 
