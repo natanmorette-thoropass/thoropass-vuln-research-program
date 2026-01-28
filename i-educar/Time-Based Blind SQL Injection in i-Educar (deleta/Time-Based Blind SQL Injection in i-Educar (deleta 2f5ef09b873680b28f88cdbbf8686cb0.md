@@ -11,7 +11,7 @@
 | **Endpoint**     | `/intranet/agenda.php`                                                  |
 | **Parameter**    | `deletar`                                                               |
 | **Type**         | Time-Based Blind SQL Injection (PostgreSQL)                             |
-| **CWE**          | CWE-89: Improper Neutralization of Special Elements used in an SQL Command (SQL Injection) |
+
 ## **Summary**
 
 The deletar parameter in the agenda.php page of the i-Educar system is vulnerable to **time-based blind SQL injection**. An attacker can craft a malicious request that manipulates the SQL logic and introduces delays via pg_sleep() — thereby **proving code execution** in the backend PostgreSQL database.
