@@ -28,11 +28,6 @@
   <tr>
     <td><strong>Type</strong></td>
     <td>Time-Based Blind SQL Injection (PostgreSQL)</td>
-  </tr>
-  <tr>
-    <td><strong>CWE</strong></td>
-    <td>CWE-89: Improper Neutralization of Special Elements used in an SQL Command (SQL Injection)</td>
-  </tr>
 </table>
 
 ## **Summary**
