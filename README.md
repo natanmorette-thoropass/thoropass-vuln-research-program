@@ -32,13 +32,13 @@ All public findings are documented as security advisories, including:
 - Mitigation and remediation guidance
 - Disclosure timeline
 - CVE identifiers (when assigned)
-
+- ---
 📁 Advisories are organized by year and CVE.
 /advisories
 └── 2025
 ├── THORO-2025-001-project-name.md
 ├── THORO-2025-002-project-name.md
-
+- ---
 ## 🏷️ What is a CVE?
 
 A **CVE (Common Vulnerabilities and Exposures)** identifier is a globally recognized reference for a specific security vulnerability.
@@ -49,7 +49,7 @@ CVE identifiers:
 - Improve transparency and accountability in security disclosure
 
 Not all advisories receive a CVE immediately; publication depends on coordination with maintainers and CVE Numbering Authorities (CNAs).
-
+- ---
 ## 🤝 Responsible Disclosure
 
 Thoropass follows **coordinated vulnerability disclosure (CVD)** principles:
@@ -62,7 +62,7 @@ We do not publish:
 - Customer data
 - Sensitive secrets or credentials
 - Exploit code intended for mass abuse
-
+- ---
 - ## 🌍 Ecosystem Contribution
 
 Our research contributes to:
