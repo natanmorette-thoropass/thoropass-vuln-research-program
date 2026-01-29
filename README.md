@@ -30,21 +30,9 @@ All public findings are documented as security advisories, including:
 - Affected components and versions
 - Security impact
 - Mitigation and remediation guidance
-- Disclosure timeline
-- CVE identifiers (when assigned)
+- CVE identifiers 
 - ---
 
-📁 Advisories are organized by year and CVE.
-/advisories
-
-Security advisories are organized by **year** and **identifier**, following a consistent naming convention.
-
-**Directory structure:**
-
-- `advisories/2025/THORO-2025-001-project-name.md`
-- `advisories/2025/THORO-2025-002-project-name.md`
-  
-- ---
 
 ## 🏷️ What is a CVE?
 
@@ -82,7 +70,7 @@ Our research contributes to:
 Where applicable, vulnerabilities are disclosed through:
 - GitHub Security Advisories
 - Vendor security programs
-- Recognized CNAs (e.g., MITRE, GitHub, VulnDB)
+- Recognized CNAs (e.g. VulnDB)
 
 - ---
 
