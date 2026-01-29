@@ -7,11 +7,18 @@
     <td>Natan Morette on behalf of <a href="https://thoropass.com">Thoropass</a></td>
   </tr>
   <tr>
-    <td><strong>Affected App</strong></td>
-    <td><a href="https://github.com/jsbroks/coco-annotator">coco-annotator</a></td>
+    <td><strong>Affected Application</strong></td>
+    <td>
+      <a href="https://github.com/jsbroks/coco-annotator">COCO Annotator</a><br>
+      <small>
+        Open-source, web-based image annotation platform used to build datasets
+        for computer vision and machine learning workflows, supporting the COCO
+        dataset format.
+      </small>
+    </td>
   </tr>
   <tr>
-    <td><strong>Version</strong></td>
+    <td><strong>Affected Version</strong></td>
     <td>0.11.1</td>
   </tr>
   <tr>
@@ -19,7 +26,7 @@
     <td><code>/api/info/long_task</code></td>
   </tr>
   <tr>
-    <td><strong>Type</strong></td>
+    <td><strong>Vulnerability Type</strong></td>
     <td>Denial of Service (DoS)</td>
   </tr>
 </table>
