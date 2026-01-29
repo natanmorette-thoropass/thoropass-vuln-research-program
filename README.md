@@ -35,10 +35,13 @@ All public findings are documented as security advisories, including:
 - ---
 📁 Advisories are organized by year and CVE.
 /advisories
+
 └── 2025
 ├── THORO-2025-001-project-name.md
 ├── THORO-2025-002-project-name.md
+
 - ---
+
 ## 🏷️ What is a CVE?
 
 A **CVE (Common Vulnerabilities and Exposures)** identifier is a globally recognized reference for a specific security vulnerability.
