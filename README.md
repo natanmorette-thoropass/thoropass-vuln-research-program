@@ -33,13 +33,17 @@ All public findings are documented as security advisories, including:
 - Disclosure timeline
 - CVE identifiers (when assigned)
 - ---
+
 📁 Advisories are organized by year and CVE.
 /advisories
 
-└── 2025
-├── THORO-2025-001-project-name.md
-├── THORO-2025-002-project-name.md
+Security advisories are organized by **year** and **identifier**, following a consistent naming convention.
 
+**Directory structure:**
+
+- `advisories/2025/THORO-2025-001-project-name.md`
+- `advisories/2025/THORO-2025-002-project-name.md`
+  
 - ---
 
 ## 🏷️ What is a CVE?
