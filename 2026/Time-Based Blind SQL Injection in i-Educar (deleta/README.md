@@ -3,18 +3,24 @@
 
 <img width="525" height="91" alt="image" src="https://github.com/user-attachments/assets/b3ef3c1c-554b-4055-b28c-4690bd23724d" />
 
-
 <table>
   <tr>
     <td><strong>Author</strong></td>
     <td>Natan Morette on behalf of <a href="https://thoropass.com">Thoropass</a></td>
   </tr>
   <tr>
-    <td><strong>Affected App</strong></td>
-    <td><a href="https://github.com/portabilis/i-educar">i-Educar</a></td>
+    <td><strong>Affected Application</strong></td>
+    <td>
+      <a href="https://github.com/portabilis/i-educar">i-Educar</a><br>
+      <small>
+        Open-source, web-based school management system widely used by public
+        education institutions in Brazil to manage academic and administrative
+        data in real time.
+      </small>
+    </td>
   </tr>
   <tr>
-    <td><strong>Version</strong></td>
+    <td><strong>Affected Version</strong></td>
     <td>2.10.0</td>
   </tr>
   <tr>
@@ -22,12 +28,9 @@
     <td><code>/intranet/agenda.php</code></td>
   </tr>
   <tr>
-    <td><strong>Parameter</strong></td>
-    <td><code>deletar</code></td>
+    <td><strong>Vulnerability Type</strong></td>
+    <td>Time-Based Blind SQL Injection</td>
   </tr>
-  <tr>
-    <td><strong>Type</strong></td>
-    <td>Time-Based Blind SQL Injection (PostgreSQL)</td>
 </table>
 
 ## **Summary**
