@@ -1,4 +1,5 @@
-<img width="1027" height="538" alt="image" src="https://github.com/user-attachments/assets/83a634fa-9256-4d5e-8000-6cae45b48bc6" />
+<img width="2742" height="2742" alt="image" src="https://github.com/user-attachments/assets/b3bbec80-2537-4578-889e-18eaad0d1194" />
+
 
 # Thoropass Vulnerability Research Program
 
@@ -81,4 +82,5 @@ Research published here is conducted by **Thoropass Pentest Team** and contribut
 Individual researchers are credited in each advisory.
 
 
+<img width="748" height="117" alt="image" src="https://github.com/user-attachments/assets/557c3c6e-bc2d-4b0e-90cb-503767a0aa23" />
 
