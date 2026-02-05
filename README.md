@@ -1,4 +1,4 @@
-<img width="2742" height="2742" alt="image" src="https://github.com/user-attachments/assets/b3bbec80-2537-4578-889e-18eaad0d1194" />
+<img width="500" height="500" alt="image" src="https://github.com/user-attachments/assets/b3bbec80-2537-4578-889e-18eaad0d1194" />
 
 
 # Thoropass Vulnerability Research Program
