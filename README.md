@@ -7,6 +7,7 @@
   # Thoropass Vulnerability Research Program
   
   🔐 **Security Research • CVE Discovery • Responsible Disclosure**
+  🧪 **Security Research • CVE Discovery • Responsible Disclosure**
   
 </div>
 
@@ -14,7 +15,7 @@
 
 
 
-🧪 **Security Research • CVE Discovery • Responsible Disclosure**
+
 
 The **Thoropass Vulnerability Research Program** initiative documents original security research conducted by Thoropass pentesters, focused on identifying, validating, and responsibly disclosing vulnerabilities in widely used software and open-source projects.
 
