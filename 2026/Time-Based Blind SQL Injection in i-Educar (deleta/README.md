@@ -1,4 +1,11 @@
-# Time-Based Blind SQL Injection in i-Educar (deletar parameter in agenda.php)
+
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/b3bbec80-2537-4578-889e-18eaad0d1194" width="150" alt="Thoropass Logo">
+  
+  # Time-Based Blind SQL Injection in i-Educar (deletar parameter in agenda.php)
+  
+  
+</div>
 
 
 <img width="525" height="91" alt="image" src="https://github.com/user-attachments/assets/b3ef3c1c-554b-4055-b28c-4690bd23724d" />
