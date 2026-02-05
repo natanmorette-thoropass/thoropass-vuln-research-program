@@ -8,8 +8,6 @@
 </div>
 
 
-<img width="525" height="91" alt="image" src="https://github.com/user-attachments/assets/b3ef3c1c-554b-4055-b28c-4690bd23724d" />
-
 <table>
   <tr>
     <td><strong>Author</strong></td>
@@ -92,3 +90,6 @@ Expected delay: ~10 seconds
 - [OWASP Top 10: A01 – Broken Access Control](https://owasp.org/Top10/en/A01_2021-Broken_Access_Control/)
 - [OWASP SQL Injection Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/SQL_Injection_Prevention_Cheat_Sheet.html)
 - [PostgreSQL pg_sleep() documentation](https://www.postgresql.org/docs/current/functions-datetime.html#FUNCTIONS-DATETIME-DELAY)
+
+- --
+<img width="748" height="117" alt="image" src="https://github.com/user-attachments/assets/557c3c6e-bc2d-4b0e-90cb-503767a0aa23" />
