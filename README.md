@@ -1,7 +1,18 @@
-<img width="150" height="150" alt="image" src="https://github.com/user-attachments/assets/b3bbec80-2537-4578-889e-18eaad0d1194" /> # Thoropass Vulnerability Research Program
 
 
-# Thoropass Vulnerability Research Program
+
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/b3bbec80-2537-4578-889e-18eaad0d1194" width="150" alt="Thoropass Logo">
+  
+  # Thoropass Vulnerability Research Program
+  
+  🔐 **Security Research • CVE Discovery • Responsible Disclosure**
+  
+</div>
+
+
+
+
 
 🧪 **Security Research • CVE Discovery • Responsible Disclosure**
 
