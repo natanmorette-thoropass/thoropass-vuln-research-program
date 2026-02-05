@@ -6,8 +6,7 @@
   
   # Thoropass Vulnerability Research Program
   
-  🔐 **Security Research • CVE Discovery • Responsible Disclosure**
-  🧪 **Security Research • CVE Discovery • Responsible Disclosure**
+  🔐 **Security Research • CVE Discovery • Responsible Disclosure** 🧪
   
 </div>
 
