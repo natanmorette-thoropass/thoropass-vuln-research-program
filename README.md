@@ -83,19 +83,27 @@ Our research contributes to:
 Where applicable, vulnerabilities are disclosed through:
 - GitHub Security Advisories
 - Vendor security programs
-- Recognized CNAs (e.g. VulnDB)
+- Recognized CNAs (e.g. VulnDB, GitHub)
 
 - ---
 
 ## About Thoropass
+Thoropass delivers enterprise-grade audits with AI-native speed and precision. Designed from day one to integrate auditors, automation, and infosec workflows in a single, closed-loop system — no add-ons, no handoffs.
+
+
+
 
 ---
-
 <div align="center">
+  <a href="https://thoropass.com" target="_blank" rel="noopener noreferrer">
+    <img src="https://img.shields.io/badge/🌐_WEBSITE-THOROPASS-0078D4?style=for-the-badge" alt="Website">
+  </a>
   <a href="https://linkedin.com/in/seu-perfil" target="_blank" rel="noopener noreferrer">
-    <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn">
+    <img src="https://img.shields.io/badge/LINKEDIN-CONNECT-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn">
+  </a>
+  <br><br>
+  <a href="https://thoropass.com" target="_blank" rel="noopener noreferrer">
+    <img width="100%" alt="Thoropass" src="https://github.com/user-attachments/assets/557c3c6e-bc2d-4b0e-90cb-503767a0aa23">
   </a>
 </div>
-
-<img width="748" height="117" alt="image" src="https://github.com/user-attachments/assets/557c3c6e-bc2d-4b0e-90cb-503767a0aa23" />
 
