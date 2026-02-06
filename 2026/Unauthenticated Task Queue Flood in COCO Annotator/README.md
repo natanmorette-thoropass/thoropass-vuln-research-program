@@ -15,9 +15,9 @@
   <h1>Thoropass Vulnerability Research Program</h1>
 </div>
 <table>
-  <tr>
+ <tr>
     <td><strong>Author</strong></td>
-    <td>Natan Morette on behalf of <a href="https://thoropass.com">Thoropass</a></td>
+    <td><a href="https://www.linkedin.com/in/nmmorette/">Natan Morette</a> on behalf of <a href="https://thoropass.com">Thoropass</a></td>
   </tr>
   <tr>
     <td><strong>Affected Application</strong></td>
@@ -119,19 +119,11 @@ A remote unauthenticated attacker can:
 
 ## **References**
 
-Aqui estão as referências formatadas no mesmo estilo:
 
 - [CWE-306: Missing Authentication for Critical Function](https://cwe.mitre.org/data/definitions/306.html)
 - [CWE-400: Uncontrolled Resource Consumption](https://cwe.mitre.org/data/definitions/400.html)
 - [OWASP Top 10 – A05:2021 Security Misconfiguration](https://owasp.org/Top10/A05_2021-Security_Misconfiguration/)
 
-
-Pronto! Agora está no mesmo padrão com texto descritivo e links formatados. 🎯
-
-
-## **Finder**
-
-*Discovered by Thoropass Researcher [Natan Morette](https://www.linkedin.com/in/nmmorette/)*
 
 
 - ---
