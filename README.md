@@ -71,7 +71,8 @@ We do not publish:
 - Sensitive secrets or credentials
 - Exploit code intended for mass abuse
 - ---
-- ## 🌍 Ecosystem Contribution
+
+## 🌍 Ecosystem Contribution
 
 Our research contributes to:
 
