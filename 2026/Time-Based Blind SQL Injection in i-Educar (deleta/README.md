@@ -7,11 +7,10 @@
   
 </div>
 
-
 <table>
   <tr>
     <td><strong>Author</strong></td>
-    <td>Natan Morette on behalf of <a href="https://thoropass.com">Thoropass</a></td>
+    <td><a href="https://www.linkedin.com/in/nmmorette/">Natan Morette</a> on behalf of <a href="https://thoropass.com">Thoropass</a></td>
   </tr>
   <tr>
     <td><strong>Affected Application</strong></td>
@@ -35,6 +34,14 @@
   <tr>
     <td><strong>Vulnerability Type</strong></td>
     <td>Time-Based Blind SQL Injection</td>
+  </tr>
+  <tr>
+    <td><strong>CVE ID</strong></td>
+    <td>
+      <a href="https://www.cve.org/CVERecord?id=INSERT" target="_blank" rel="noopener noreferrer">
+        <img src="https://img.shields.io/badge/CVE-2025--INSERT-medium?style=flat-square&logo=cve&logoColor=white&color=d73a4a" alt="INSERT">
+      </a>
+    </td>
   </tr>
 </table>
 
@@ -91,23 +98,38 @@ Expected delay: ~10 seconds
 - [OWASP SQL Injection Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/SQL_Injection_Prevention_Cheat_Sheet.html)
 - [PostgreSQL pg_sleep() documentation](https://www.postgresql.org/docs/current/functions-datetime.html#FUNCTIONS-DATETIME-DELAY)
 
----
 
 
 ## About Thoropass
+
 Thoropass delivers enterprise-grade audits with AI-native speed and precision. Designed from day one to integrate auditors, automation, and infosec workflows in a single, closed-loop system — no add-ons, no handoffs.
+
+Our experienced penetration testing team proactively discovers vulnerabilities in web applications, APIs, and infrastructure — helping organizations secure their systems before attackers find weaknesses.
+<div align="center">
+  <br>
+  <a href="https://thoropass.com/contact" target="_blank" rel="noopener noreferrer">
+    <img src="https://img.shields.io/badge/🔒_Request_a_Penetration_Test-Get_Started-7ED957?style=for-the-badge" alt="Request Pentest">
+  </a>
+  <br><br>
+</div>
 
 
 <div align="center">
-  <a href="https://thoropass.com" target="_blank" rel="noopener noreferrer">
+  <a href="https://www.thoropass.com/platform/penetration-testing" target="_blank" rel="noopener noreferrer">
     <img src="https://img.shields.io/badge/🌐_WEBSITE-THOROPASS-0078D4?style=for-the-badge" alt="Website">
   </a>
-  <a href="https://linkedin.com/in/seu-perfil" target="_blank" rel="noopener noreferrer">
+  <a href="https://www.linkedin.com/company/thoropass/" target="_blank" rel="noopener noreferrer">
     <img src="https://img.shields.io/badge/LINKEDIN-CONNECT-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn">
-  </a>
+</div>
+
+- ---
+
+<div align="center">
   <br><br>
-  <a href="https://thoropass.com" target="_blank" rel="noopener noreferrer">
+  <a href="https://www.thoropass.com/talk-to-an-expert" target="_blank" rel="noopener noreferrer">
     <img width="100%" alt="Thoropass" src="https://github.com/user-attachments/assets/557c3c6e-bc2d-4b0e-90cb-503767a0aa23">
   </a>
 </div>
+
+
 
