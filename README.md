@@ -1,18 +1,19 @@
-
-
-
 <div align="center">
-  <img src="https://github.com/user-attachments/assets/b3bbec80-2537-4578-889e-18eaad0d1194" width="150" alt="Thoropass Logo">
+  <a href="https://thoropass.com" target="_blank" rel="noopener noreferrer">
+    <img src="https://github.com/user-attachments/assets/b3bbec80-2537-4578-889e-18eaad0d1194" width="150" alt="Thoropass Logo">
+  </a>
+  <br><br>
+  <a href="https://thoropass.com" target="_blank" rel="noopener noreferrer">
+    <img src="https://img.shields.io/badge/🌐_WEBSITE-THOROPASS-0078D4?style=for-the-badge" alt="Website">
+  </a>
+  <a href="https://linkedin.com/in/seu-perfil" target="_blank" rel="noopener noreferrer">
+    <img src="https://img.shields.io/badge/LINKEDIN-CONNECT-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn">
+  </a>
   
-  # Thoropass Vulnerability Research Program
+  <h1>Thoropass Vulnerability Research Program</h1>
   
-  🔐 **Security Research • CVE Discovery • Responsible Disclosure** 🧪
-  
+  <p>🔐 <strong>Security Research • CVE Discovery • Responsible Disclosure</strong> 🧪</p>
 </div>
-
-
-
-
 
 
 
@@ -86,12 +87,15 @@ Where applicable, vulnerabilities are disclosed through:
 
 - ---
 
-## 🧠 Research Credits
+## About Thoropass
 
-Research published here is conducted by **Thoropass Pentest Team** and contributors.
+---
 
-Individual researchers are credited in each advisory.
-
+<div align="center">
+  <a href="https://linkedin.com/in/seu-perfil" target="_blank" rel="noopener noreferrer">
+    <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn">
+  </a>
+</div>
 
 <img width="748" height="117" alt="image" src="https://github.com/user-attachments/assets/557c3c6e-bc2d-4b0e-90cb-503767a0aa23" />
 
