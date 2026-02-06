@@ -84,7 +84,7 @@ Our research contributes to:
 Where applicable, vulnerabilities are disclosed through:
 - GitHub Security Advisories
 - Vendor security programs
-- Recognized CNAs (e.g. VulnDB, GitHub)
+- Recognized CNAs (e.g. VulnDB)
 
 - ---
 
