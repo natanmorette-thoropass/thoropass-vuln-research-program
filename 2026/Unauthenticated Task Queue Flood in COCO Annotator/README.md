@@ -1,6 +1,19 @@
 # Unauthenticated Task Queue Flood in COCO Annotator via /api/info/long_task
-<img width="525" height="91" alt="image" src="https://github.com/user-attachments/assets/b3ef3c1c-554b-4055-b28c-4690bd23724d" />
 
+<div align="center">
+  <a href="https://thoropass.com" target="_blank" rel="noopener noreferrer">
+    <img src="https://github.com/user-attachments/assets/b3bbec80-2537-4578-889e-18eaad0d1194" width="150" alt="Thoropass Logo">
+  </a>
+  <br><br>
+  <a href="https://thoropass.com" target="_blank" rel="noopener noreferrer">
+    <img src="https://img.shields.io/badge/🌐_WEBSITE-THOROPASS-0078D4?style=for-the-badge" alt="Website">
+  </a>
+  <a href="https://linkedin.com/in/seu-perfil" target="_blank" rel="noopener noreferrer">
+    <img src="https://img.shields.io/badge/LINKEDIN-CONNECT-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn">
+  </a>
+  
+  <h1>Thoropass Vulnerability Research Program</h1>
+</div>
 <table>
   <tr>
     <td><strong>Author</strong></td>
@@ -39,13 +52,12 @@ The endpoint: `/api/info/long_task` is exposed **without authentication or rate 
 
 This creates a critical **Denial of Service (DoS)** vulnerability. An attacker can flood the endpoint with repeated requests, overwhelming the Celery queue and workers, bloating the database, and rendering the entire application unresponsive — even after the attack stops.
 
----
+
 
 ## **Technical Details**
 
 ➤ Vulnerable Endpoint: `/api/info/long_task`
 
----
 
 **PoC (Proof of Concept)**
 
@@ -89,9 +101,9 @@ class TaskTest(Resource):
 
 Missing: @login_required, @limiter.limit(...)
 
----
 
-**Impact**
+
+## **Impact**
 
 A remote unauthenticated attacker can:
 
@@ -102,18 +114,43 @@ A remote unauthenticated attacker can:
 - Persist residual effects unless the task queue and DB are manually cleared
 
 > Note: Even after stopping the attack, the system remains degraded due to the backlog of tasks being processed.
-> 
+
+
+
+## **References**
+
+Aqui estão as referências formatadas no mesmo estilo:
+
+- [CWE-306: Missing Authentication for Critical Function](https://cwe.mitre.org/data/definitions/306.html)
+- [CWE-400: Uncontrolled Resource Consumption](https://cwe.mitre.org/data/definitions/400.html)
+- [OWASP Top 10 – A05:2021 Security Misconfiguration](https://owasp.org/Top10/A05_2021-Security_Misconfiguration/)
+
+
+Pronto! Agora está no mesmo padrão com texto descritivo e links formatados. 🎯
+
+
+## **Finder**
+
+*Discovered by Thoropass Researcher [Natan Morette](https://www.linkedin.com/in/nmmorette/)*
+
+
+- ---
+
+## About Thoropass
+Thoropass delivers enterprise-grade audits with AI-native speed and precision. Designed from day one to integrate auditors, automation, and infosec workflows in a single, closed-loop system — no add-ons, no handoffs.
+
 
 ---
+<div align="center">
+  <a href="https://thoropass.com" target="_blank" rel="noopener noreferrer">
+    <img src="https://img.shields.io/badge/🌐_WEBSITE-THOROPASS-0078D4?style=for-the-badge" alt="Website">
+  </a>
+  <a href="https://linkedin.com/in/seu-perfil" target="_blank" rel="noopener noreferrer">
+    <img src="https://img.shields.io/badge/LINKEDIN-CONNECT-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn">
+  </a>
+  <br><br>
+  <a href="https://thoropass.com" target="_blank" rel="noopener noreferrer">
+    <img width="100%" alt="Thoropass" src="https://github.com/user-attachments/assets/557c3c6e-bc2d-4b0e-90cb-503767a0aa23">
+  </a>
+</div>
 
-**References**
-
-- https://cwe.mitre.org/data/definitions/306.html
-- https://cwe.mitre.org/data/definitions/400.html
-- https://owasp.org/Top10/A05_2021-Security_Misconfiguration/
-
----
-
-**🕵🏻‍♀️ Finder**
-
-*Discovered by Thoropass Researcher Natan Morette*
