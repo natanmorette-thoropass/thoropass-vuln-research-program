@@ -16,7 +16,7 @@
 </div>
 
 <div align="center">
-  <img src="https://img.shields.io/badge/🏆_CVEs_Published-3-7ED957?style=for-the-badge&logoColor=white" alt="CVE Count">
+  <img src="https://img.shields.io/badge/🏆_CVEs_Published-6-7ED957?style=for-the-badge&logoColor=white" alt="CVE Count">
 </div>
 
 
