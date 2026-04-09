@@ -27,7 +27,7 @@
 
 | &nbsp; | &nbsp; |
 |:---|:---|
-| **Researcher** | Natan Morette on behalf of Thoropass |
+| **Researcher** | [Natan Morette](https://www.linkedin.com/in/nmmorette/") on behalf of [Thoropass](https://thoropass.com) |
 | **Product** | [COCO Annotator](https://github.com/jsbroks/coco-annotator) - Open-source, web-based image annotation platform used to build datasets for computer vision and machine learning workflows, supporting the COCO dataset format. |
 | **Affected Version** | All versions up to and including latest (`master` branch, commit `c3405b6`) |
 | **Endpoint** | `backend/webserver/api/datasets.py` — `DatasetDataId` endpoint |
