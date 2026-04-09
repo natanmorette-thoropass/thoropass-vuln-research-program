@@ -29,7 +29,7 @@
 |:---|:---|
 | **Researcher** | [Natan Morette](https://www.linkedin.com/in/nmmorette/") on behalf of [Thoropass](https://thoropass.com) |
 | **Product** | [COCO Annotator](https://github.com/jsbroks/coco-annotator) - Open-source, web-based image annotation platform used to build datasets for computer vision and machine learning workflows, supporting the COCO dataset format. |
-| **Affected Version** | All versions up to and including latest (`master` branch, commit `c3405b6`) |
+| **Affected Version** | v0.11.1 and all prior versions |
 | **Endpoint** | `backend/webserver/api/datasets.py` — `DatasetDataId` endpoint |
 | **Vulnerability Type** | CWE-22: Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal') |
 | **CVE ID** | *Pending assignment* |
