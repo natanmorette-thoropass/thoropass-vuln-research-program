@@ -84,16 +84,6 @@ Result:  /datasets/my-dataset/../../../etc/  →  resolves to /etc/
 
 The resulting path is passed directly to `os.listdir()` without verifying it resides within the expected dataset directory boundary. The full directory listing and the resolved path string are both returned in the JSON response body.
 
-
-### Specific Risks
-
-- **Reconnaissance for chained attacks** — Filesystem enumeration reveals exact OS version, installed packages (Python, MySQL, ImageMagick, OpenSSH), and application layout, enabling targeted exploitation of known CVEs in those components.
-- **Sensitive directory discovery** — Directories like `/etc/mysql/`, `/etc/ssh/`, `/etc/ssl/`, and `/root/` are exposed, indicating the presence of credentials and cryptographic material.
-- **Container escape preparation** — Mapping `/proc/`, `/sys/`, and mount points assists in identifying container escape vectors.
-- **Multi-tenant data leakage** — In shared deployments, attackers can discover other users' dataset directories and internal application paths.
-
-
-
 ## Proof of Concept
 
 ### Minimal Reproduction (cURL)
