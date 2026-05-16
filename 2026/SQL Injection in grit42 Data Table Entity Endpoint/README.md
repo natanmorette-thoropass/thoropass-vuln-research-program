@@ -37,7 +37,7 @@
 
 ## Vulnerability Summary
 
-he `Grit::Assays::DataTableEntity` model interpolates user-controlled `params[:data_table_id]` directly into a Rails `.joins(string)` clause. The model is protected by `entity_crud_with read: []`, allowing any active grit user (including zero-role accounts) to reach the sink. A preceding `DataTable.find(params[:data_table_id])` call coerces the value via `to_i`, so a payload like `1 OR 1=1` passes `.find()` but is interpolated unchanged into the JOIN, enabling subquery-based blind extraction.
+The `Grit::Assays::DataTableEntity` model interpolates user-controlled `params[:data_table_id]` directly into a Rails `.joins(string)` clause. The model is protected by `entity_crud_with read: []`, allowing any active grit user (including zero-role accounts) to reach the sink. A preceding `DataTable.find(params[:data_table_id])` call coerces the value via `to_i`, so a payload like `1 OR 1=1` passes `.find()` but is interpolated unchanged into the JOIN, enabling subquery-based blind extraction.
 
 A zero-role authenticated attacker extracts the administrator's `single_access_token` from `grit_core_users` via boolean-blind brute force, then replays it as a permanent `Authorization: Bearer` credential for full administrator account takeover. The same primitive reads any column the database role can see, including hashed passwords, password-reset tokens, activation tokens, and second-factor tokens.
 
