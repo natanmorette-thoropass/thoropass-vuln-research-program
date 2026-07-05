@@ -118,12 +118,12 @@ echo 'dWlkPTAocm9vdCkgZ2lkPTAocm9vdCkgZ3JvdXBzPTAocm9vdCkK' | base64 -d
 # uid=0(root) gid=0(root) groups=0(root)
 ```
 
-![Unauthenticated RCE confirmed out-of-band: the exploit callback lands on the collaborator and the base64 payload decodes to uid=0(root)](rce-oob-collaborator.png)
 
 The `/mcp/test` response also opportunistically reflects the command's stderr in its `error` field, which gives an in-band read primitive with no attacker infrastructure (writing output to stderr returns it in the HTTP response). This channel is race-dependent, so the out-of-band callback above is the reliable confirmation. A full reverse shell is achievable by setting `args` to a shell one-liner. The screenshot below shows the complete local chain: exposure on `0.0.0.0:8090`, the anonymous `200` on `/mcp/manifest`, the `POST /mcp/test` exploit, and the root marker inside the container.
 
-![Exposure on 0.0.0.0:8090, anonymous /mcp/manifest returns 200, POST /mcp/test spawns /bin/sh, and the marker shows uid=0(root)](rce-local-chain.png)
+![ID](image.png)
 
+![whoami](image-1.png)
 
 ## Impact
 
