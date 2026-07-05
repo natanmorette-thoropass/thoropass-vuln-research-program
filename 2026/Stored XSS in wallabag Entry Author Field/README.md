@@ -34,7 +34,7 @@
 | **Vulnerable Endpoint (Sink)** | `GET /view/{id}` - the entry view template that renders `published_by` with Twig's `\|raw` filter. |
 | **Source Endpoints** | `POST /api/entries.json` (direct `authors` parameter injection) and `GET /bookmarklet?url=...` (Graby-extracted `<meta name="author">` from any URL the victim is induced to submit). |
 | **Vulnerability Type** | CWE-79: Improper Neutralization of Input During Web Page Generation (Cross-Site Scripting) |
-| **CVE ID** | *Pending assignment* |
+| **CVE ID** | [CVE-2026-12188](https://www.cve.org/CVERecord?id=CVE-2026-12188)  |
 
 ## Vulnerability Summary
 
