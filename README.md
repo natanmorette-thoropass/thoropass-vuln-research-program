@@ -101,7 +101,7 @@ Thoropass delivers enterprise-grade audits with AI-native speed and precision. D
 Our experienced penetration testing team proactively discovers vulnerabilities in web applications, APIs, and infrastructure — helping organizations secure their systems before attackers find weaknesses.
 <div align="center">
   <br>
-  <a href="https://thoropass.com/contact" target="_blank" rel="noopener noreferrer">
+  <a href="https://www.thoropass.com/platform/penetration-testing" target="_blank" rel="noopener noreferrer">
     <img src="https://img.shields.io/badge/🔒_Request_a_Penetration_Test-Get_Started-7ED957?style=for-the-badge" alt="Request Pentest">
   </a>
   <br><br>
@@ -109,7 +109,7 @@ Our experienced penetration testing team proactively discovers vulnerabilities i
 
 
 <div align="center">
-  <a href="https://www.thoropass.com/platform/penetration-testing" target="_blank" rel="noopener noreferrer">
+  <a href="https://www.thoropass.com/" target="_blank" rel="noopener noreferrer">
     <img src="https://img.shields.io/badge/🌐_WEBSITE-THOROPASS-0078D4?style=for-the-badge" alt="Website">
   </a>
   <a href="https://www.linkedin.com/company/thoropass/" target="_blank" rel="noopener noreferrer">
